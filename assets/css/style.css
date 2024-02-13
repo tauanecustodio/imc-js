@@ -83,6 +83,7 @@
 body {
     width: 100vw;
     min-height: 100vh;
+    height: 100%;
     background: linear-gradient(45deg, var(--quaternary-color), var(--tertiary-color));
     color: var(--text-color);
     display: flex;
@@ -113,6 +114,7 @@ body {
 }
 
 .form-group {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 0.2em;
