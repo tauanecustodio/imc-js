@@ -6,7 +6,6 @@ const valorImc = document.querySelector('#valor-imc');
 const textoResultado = document.querySelector('#resultado');
 
 // functions
-
 function adicionarCoresETexto(status, texto) {
     document.getElementById('valor-imc').classList.add(status);
     document.getElementById('resultado').classList.add(status);
@@ -19,26 +18,33 @@ function esconderOuMostrar() {
 }
 
 function validarDigitos(text) {
-    return text.replace(/[^0-9,]/g, "");
+    return text.replace(/[^0-9,.]/g, "");
 }
 
+function calcularImc(peso, altura) {
+    peso = parseFloat(peso.replace(',', '.'));
+    altura = parseFloat(altura.replace(',', '.'));
+    if (!peso || !altura) return;
+    let imc = (peso / (altura * altura)).toFixed(2);
+    return parseFloat(imc);
+};
+
 // actions
-[peso, altura].forEach((el) => {
-    el.addEventListener('input', (e) => {
-        const updateValor = validarDigitos(e.target.value);
-        e.target.value = updateValor;
-    });
-})
+
+document.getElementById('peso').addEventListener('input', function(e) {
+    this.value = validarDigitos(this.value);
+});
+
+document.getElementById('altura').addEventListener('input', function(e) {
+    this.value = validarDigitos(this.value);
+});
 
 buttonCalcular.addEventListener('click', function(event) {
     event.preventDefault();
-
-    const peso = document.getElementById('peso').value.replace(',','.');
-    const altura = document.getElementById('altura').value.replace(',','.');
-    if (!peso || !altura) return;
-
-    let imc = (peso / (altura * altura)).toFixed(2);
-    valorImc.innerText = imc.replace('.', ',');
+    const peso = document.getElementById('peso').value;
+    const altura = document.getElementById('altura').value;
+    const imc = calcularImc(peso, altura);
+    valorImc.innerText = imc.toString().replace('.', ',');
 
     if (imc < 18.5) {
         adicionarCoresETexto('low', 'Abaixo do peso');}
@@ -62,7 +68,7 @@ buttonLimpar.addEventListener('click', function() {
 });
 
 buttonvoltar.addEventListener('click', function() {
-    document.getElementById('valor-imc').classList = '';
-    document.getElementById('resultado').classList = '';
+    valorImc.classList = '';
+    textoResultado.classList = '';
     esconderOuMostrar();
 });
