@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC - calculadora</title>
+    <!-- css -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <!-- ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+    <main class="container">
+        <section class="content-section sections" id="content-section">
+            <h1 class="title">Calcule seu IMC</h1>
+            <p class="about">O índice de massa corporal (IMC) é uma medida internacional usada para calcular se uma pessoa está no peso ideal <sup><a href="https://pt.wikipedia.org/wiki/%C3%8Dndice_de_massa_corporal" target="_blank">[1]</a></sup></p>
+            <form class="form-group">
+                <label for="peso">Peso (kg)</label>
+                <div class="input-field">
+                    <i class="fa-solid fa-weight-scale"></i>
+                    <input type="text" inputmode="numeric" id="peso" placeholder="Ex: 50" required>
+                </div>
+                <label for="altura">Altura (m)</label>
+                <div class="input-field">
+                    <i class="fa-solid fa-ruler"></i>
+                    <input type="text" inputmode="numeric" id="altura" placeholder="Ex: 1.50" required>
+                </div>
+                <div  class="button-group">
+                    <input id="calcular" class="btn" type="submit" value="Calcular">
+                    <input id="limpar" class="btn" type="reset" value="Limpar">
+                </div>
+            </form>
+        </section>
+        <section id="section-resultado" class="section-resultado sections hidden">
+            <div>
+                <h2 class="title">Seu IMC: <span id="valor-imc"></span></h2>
+                <p>Situação atual: <span id="resultado"></span></p>
+            </div>
+            <table class="table-imc">
+                <thead>
+                    <tr>
+                        <th>IMC</th>
+                        <th>Classificação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Abaixo do peso</td>
+                        <td>Menor que 18,5</td>
+                    </tr>
+                    <tr>
+                        <td>Peso normal</td>
+                        <td>Entre 18.5 e 24,9</td>
+                    </tr>
+                    <tr>
+                        <td>Excesso de peso</td>
+                        <td>Entre 25 e 29,9</td>
+                    </tr>
+                    <tr>
+                        <td>Obesidade classe I</td>
+                        <td>Entre 30 e 34,9</td>
+                    </tr>
+                    <tr>
+                        <td>Obesidade classe II</td>
+                        <td>Entre 35 e 39,9</td>
+                    </tr>
+                    <tr>
+                        <td>Obesidade classe III</td>
+                        <td>Acima de 40</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="buttonVoltar" class="btn">Voltar</button>
+        </section>
+        <section class="img-section sections" id="img-section">
+            <img  src="assets/images/ilustration.jpg" alt="ilustração de um coração com um médico segurando uma prancheta e checando os batimentos cardíacos">
+        </section>
+    </main>
+
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

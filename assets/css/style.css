@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --primary-color: #4B53F2;
+    --tertiary-color: #E9605A;
+    --button-focus-color: #e85750;
+    --quaternary-color: #7D97F4;
+    --quinary-color: #D3E1FC;
+    --text-color: #100774;
+}
+
+/* elementos */
+
+.btn {
+    margin: 0 auto;
+    padding: 0.5em;
+    font-size: 1.2em;
+    width: 50%;
+    background: var(--tertiary-color);
+    color: white;
+    font-weight: 500;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.btn:focus {
+    background: var(--button-focus-color);
+    box-shadow: 0 0 0 1px var(--tertiary-color);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.sections {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1.5em 2em;
+    text-align: center;
+}
+
+.title {
+    font-size: 2.3em;
+    text-transform: uppercase;
+}
+
+/* classes para cor do IMC */
+
+.good {
+    color: #12db34;
+}
+
+.low {
+    color: #dbce12;
+}
+
+.midium {
+    color: #db6212;
+}
+
+.high {
+    color: #db1912;
+}
+
+/* fim elementos */
+
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    background: linear-gradient(45deg, var(--quaternary-color), var(--tertiary-color));
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    max-width: 900px;
+    background-color: white;
+    margin: 6em;
+    border-radius: 8px;
+}
+
+/* seção da ilustração */
+
+.img-section img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* seção com a calculadora */
+
+.about sup a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
+}
+
+.input-field {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.input-field i {
+    color: var(--tertiary-color);
+    font-size: 1.3em;
+    padding: 0.2em;
+}
+
+.form-group label {
+    font-weight: 500;
+}
+
+.form-group label:nth-of-type(2) {
+    margin-top: 0.7em;
+}
+
+.input-field input {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid var(--tertiary-color);
+    background: transparent;
+    padding: 0.5em;
+    font-size: 1.2em;
+}
+
+.input-field input:focus {
+    outline: none;
+    box-shadow: 0 1px 0 0 var(--tertiary-color);
+}
+
+.button-group {
+    width: 100%;
+    margin-top: 1em;
+    display: flex;
+    gap: 0.2em;
+}
+
+/* seção com o resultado */
+
+.table-imc {
+    width: 90%;
+    border-collapse: collapse;
+}
+
+.table-imc th, td {
+    font-size: 0.8em;
+    padding: 0.5em;
+}
+
+.table-imc tbody tr:hover {
+    background-color: var(--quinary-color);
+}
+
+.table-imc tr + tr {
+    border-top: 2px solid var(--quaternary-color);
+}
+
+/* medias */
+
+@media (max-width: 950px) {
+    .container {
+        max-width: 600px;
+        flex-direction: column;
+        margin: 2em;
+    }
+    .img-section, .content-section, #section-resultado {
+        width: 100%;
+    }
+}
