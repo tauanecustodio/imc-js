@@ -25,6 +25,7 @@ Aprendi a usar no JavaScript:
 
 ### 🌐 Fontes
 Video [Como fazer uma calculadora de IMC RESPONSIVA com HTML, CSS e JavaScript](https://youtu.be/UBYqkpsafyI?si=xy1SnG8ARDRT81k5) por Larissa Kich;
+<br>
 Video [Projeto Calculadora de IMC com JavaScript - Projeto HTML CSS e JavaScript](https://youtu.be/Jx_msqDaiCg?si=CjoWyXRYT-X6SiRH) por Matheus Battisti - Hora de Codar;
 
 Ilustração ultilizada: [Imagem de vectorjuice](https://br.freepik.com/vetores-gratis/conceito-abstrato-de-hipertensao_12085771.htm#query=healty&position=15&from_view=search&track=sph&uuid=6555e4f5-0a6e-47f6-8ea3-fb31a3998ceb) no Freepik.
